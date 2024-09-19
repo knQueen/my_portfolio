@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            height: 80px;
+            background: rgb(223, 157, 168);
+        }
+        
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        ul li {
+            list-style: none;
+            padding: 5px;
+            margin: 8px;
+        }
+        
+        .action {
+            display: none;
+        }
+        
+        #menu-btn {
+            display: none;
+        }
+        
+        @media(max-width:600px) {
+            .action {
+                display: block;
+            }
+            ul {
+                position: absolute;
+                top: 100px;
+                height: 350px;
+                width: 100%;
+                background: red;
+                flex-direction: column;
+                left: -100%;
+                transition: 4s;
+            }
+            #menu-btn:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="menu-btn">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Contact Us</li>
+        </ul>
+        <div class="action">
+            <label for="menu-btn">Click Here</label>
+            <!-- <button>
+                Click Here
+            </button> -->
+        </div>
+    </nav>
+</body>
+
+</html>

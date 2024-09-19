@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #dbe9ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .main-container {
+            width: 500px;
+            height: 500px;
+            background-color: #f0f9ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 121px auto;
+            border-radius: 0.8em;
+            padding: 3.75em 0;
+            box-shadow: 0 1.97em 3.75em rgba(1, 87, 185, 0.25);
+        }
+        
+        .timer-container {
+            width: 110%;
+            background: #3c98ff;
+            padding: 1em 0;
+            color: #f0f9ff;
+            font-size: 2.5em;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 0.3em;
+            box-shadow: 0 0.5em 1em rgba(1, 87, 185, 0.25);
+            font-weight: 500;
+        }
+        
+        .buttons-container {
+            display: flex;
+            /* align-items: center; */
+            justify-content: space-around;
+            width: 80%;
+            margin: 3.8em auto 0 auto;
+        }
+        
+        .buttons-container button {
+            font-size: 1.12em;
+            background: #dbe9ff;
+            color: #3c98ff;
+            border: none;
+            outline: none;
+            border-radius: 0.3em;
+            padding: 1em 1.5em;
+            cursor: pointer;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            font-size: 1.2em;
+        }
+        
+        #start-btn {
+            background: #3c98ff;
+            color: #f0f9ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="timer-container">
+            00 : 00 : 00 : 000
+        </div>
+        <div class="buttons-container">
+            <button id="pause-btn">Pause</button>
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+    <script>
+        let [milliseconds, seconds, minute, hour] = [0, 0, 0, 0];
+        let timerRef = document.querySelector(".timer-container");
+        let int = null;
+
+        document.getElementById("start-btn").addEventListener("click", () => {
+            if (int !== null) {
+                clearInterval(int);
+            }
+            int = setInterval(displayTimer, 10);
+        });
+        document.getElementById("pause-btn").addEventListener("click", () => {
+            clearInterval(int);
+        });
+        document.getElementById("reset-btn").addEventListener("click", () => {
+            clearInterval(int);
+            [milliseconds, seconds, minute, hour] = [0, 0, 0, 0];
+            timerRef.innerHTML = "00 : 00 : 00 : 000";
+        });
+
+        function displayTimer() {
+            milliseconds += 10;
+            if (milliseconds == 1000) {
+                milliseconds = 0;
+                seconds++;
+                if (seconds == 60) {
+                    seconds = 0;
+                    minute++;
+                    if (minute == 60) {
+                        minute = 0;
+                        hour++;
+                    }
+                }
+            }
+
+            let h = hour < 10 ? "0" + hour : hour;
+            let m = minute < 10 ? "0" + minute : minute;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+            let ms = milliseconds < 10 ? "00" + milliseconds :
+                milliseconds < 100 ? "0" + milliseconds : milliseconds;
+            timerRef.innerHTML = `${h}: ${m}: ${s}: ${ms}`;
+            console.log(ms, "000000000000")
+
+        }
+    </script>
+</body>
+
+</html>

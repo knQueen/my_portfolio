@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box {
+            width: 500px;
+            height: 400px;
+            background: linear-gradient(red, purple);
+            padding: 10px;
+        }
+        
+        .action input {
+            width: 80%;
+            line-height: 20px;
+            background: transparent;
+            font-size: 21px;
+            padding: 0 5px;
+        }
+        
+        .btn {
+            width: 17%;
+            line-height: 20px;
+            padding: 0 5px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="action">
+            <input type="text" id="city" />
+            <button class="btn" onclick="check()">Search</button>
+        </div>
+        <div class="text">
+            <h1 id="temp">temp:35c</h1>
+            <h1 id="speed"> wind speed is 3.96 km</h1>
+            <h1 id="humidity">hummidity</h1>
+        </div>
+    </div>
+    <script>
+        function check() {
+            city = document.getElementById('city').value
+            console.log(city)
+            apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b4954d224091ea563abdc151c3965beb`;
+            console.log(apiLink)
+            fetch(apiLink)
+                .then(a => {
+                    return a.json();
+                    console.log(a)
+                })
+                .then(a => {
+                    console.log(a.main.temp)
+                    c = a.main.temp - 273.15
+
+                    document.getElementById("temp").innerText = `temp:${c}C`
+                    d = a.wind.speed
+                    document.getElementById("speed").innerText = `wind speed is:${d}`
+                    e = a.main.humidity
+                    document.getElementById("humidity").innerText = `temp humidity is:${e}`
+
+                })
+            city = document.getElementById('city').value = ''
+        }
+    </script>
+</body>
+
+</html>

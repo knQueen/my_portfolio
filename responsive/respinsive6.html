@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        nav {
+            background: #ed9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            height: 80px;
+        }
+        
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        ul li {
+            list-style: none;
+            margin: 8px;
+            padding: 9px;
+        }
+        
+        li:hover {
+            background: rgb(10, 10, 10);
+            border-radius: 15px;
+            transition: background 3s;
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .action {
+            display: none;
+        }
+        
+        #menu-btn {
+            display: none;
+        }
+        
+        @media(max-width:600px) {
+            .action {
+                display: block;
+            }
+            ul {
+                position: absolute;
+                top: 100px;
+                width: 100%;
+                height: 350px;
+                background: #e80808;
+                flex-direction: column;
+                left: -100%;
+                transition: 3s;
+            }
+            #menu-btn:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="menu-btn">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Services</li>
+        </ul>
+        <div class="action">
+            <label for="menu-btn">Click Here</label>
+            <!-- <button >
+                Clicm me
+            </button> -->
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        } */
+        
+        .main {
+            width: 600px;
+            height: 500px;
+            /* margin: auto auto; */
+            display: grid;
+            border: 2px solid black;
+            margin: 45px auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 10px;
+        }
+        
+        .main div {
+            padding: 10px;
+            background: red;
+        }
+        
+        #input-feild {
+            /* width: 455px;
+            height: 55px;
+            border: 1px solid black;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr); */
+            /* align-items: self-start; */
+            /* margin: 19px;
+            background: black; */
+        }
+        /* .main-div-calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            background: red;
+            gap: 3px;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 190px;
+        } */
+        /* .main-div-calculator div {
+            width: 50px;
+            height: 45px;
+            background: white;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+        /* #input-feild {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            background: black;
+        }
+        
+        #one {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background: black;
+        }
+        
+        #two {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background: black;
+        }
+        
+        #three {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            background: black;
+        }
+        
+        #four {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            background: black;
+        }
+        
+        #five {
+            grid-row-start: 3;
+            grid-row-end: 7;
+            background: pink;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <div type="number" id="input-feild"></div>
+
+        <div id="one">+</div>
+        <div id="two">-</div>
+        <div id="three">x</div>
+        <div id="four">/</div>
+        <div id="five">=</div>
+        <div id="six">9</div>
+        <div id="seven">8</div>
+        <div id="eight">7</div>
+        <div id="nine">6</div>
+        <div id="ten">5</div>
+        <div id="eleven">4</div>
+        <div id="tweleve">3</div>
+        <div id="thirteen">2</div>
+        <div id="fourteen">1</div>
+        <div id="fifteen">0</div>
+        <div id="sixteen">.</div>
+        <div id="seventeen">c</div>
+
+    </div>
+</body>
+
+</html>
+</div>
+</body>
+
+</html>

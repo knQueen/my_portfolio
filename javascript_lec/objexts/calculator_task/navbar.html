@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        nav {
+            width: 100vw;
+            height: 90px;
+            display: flex;
+            background: red;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        ul {
+            display: flex;
+        }
+        
+        ul li {
+            list-style: none;
+            margin: 10px;
+        }
+        
+        #home {
+            width: 100vw;
+            height: 100vh;
+            background-color: blueviolet;
+        }
+        
+        #services {
+            width: 100vw;
+            height: 100vh;
+            background-color: brown;
+        }
+        
+        #aboutus {
+            width: 100vw;
+            height: 100vh;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav1">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li onclick="change1()">Home</li>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>services</li>
+        </ul>
+    </nav>
+    <section id="home" class="row1"></section>
+    <section id="services" class="row1"></section>
+    <section id="aboutus" class="row1"></section>
+    <script>
+        function change1() {
+            nav = document.getElementById("nav1")
+            nav.style.background = "green"
+            section = document.getElementsByClassName("row1")
+            for (let i = 0; i < section.length; i++) {
+                section[0].style.background = "red"
+
+            }
+
+            // document.getElementById(services).addEventListener(MouseEvent, function(e) {
+            //     document.getElementById(services).rgb($ {
+            //         e.offsetx
+            //     })
+            // })
+        }
+    </script>
+</body>
+
+</html>

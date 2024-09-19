@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="light('on')">On Light</button>
+    <img src="images.jpeg" style="width: 200px;height: 215px;" alt="" id="light">
+    <button onclick="light('off')">off Light</button>
+    <script>
+        function light(num) {
+            document.getElementById("light").scr
+            if (num == 'on') {
+                console.log("light is on")
+                document.getElementById("light").src = 'images.jpeg'
+            } else {
+                console.log("light is off")
+                document.getElementById("light").src = 'off_img.jpg'
+
+            }
+        }
+    </script>
+</body>
+
+</html>
